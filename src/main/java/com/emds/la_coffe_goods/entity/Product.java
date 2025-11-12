@@ -1,7 +1,6 @@
 package com.emds.la_coffe_goods.entity;
 
 import com.emds.la_coffe_goods.dto.ProductRequestDTO;
-import com.emds.la_coffe_goods.dto.ProductResponseDTO;
 import com.emds.la_coffe_goods.util.CategoryItem;
 import jakarta.persistence.*;
 import lombok.*;
@@ -30,7 +29,7 @@ public class Product {
 
     private String image;
 
-    private Boolean available;
+    private Boolean available = true;
 
     public Product(ProductRequestDTO data) {
         this.name = data.name();
@@ -38,7 +37,6 @@ public class Product {
         this.description = data.description();
         this.price = data.price();
         this.image = data.image();
-        this.available = data.available();
     }
 
     public void updateFromDTO(ProductRequestDTO data) {
